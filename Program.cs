@@ -37,10 +37,10 @@ namespace console_app
         static void Name()
         {
             Console.Clear();
-            
+
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hello, " + name + "!");
+            Console.WriteLine("\nHello, " + name + "!");
             Console.ReadLine();
         }
         static void Area()
@@ -52,21 +52,21 @@ namespace console_app
             int intLength;
             while (!(Int32.TryParse(length, out intLength)))
             {
-                Console.WriteLine("Incorrect input. What is the length of the rectangle?");
+                Console.WriteLine("\nIncorrect input. What is the length of the rectangle?");
                 length = Console.ReadLine();
             }
 
-            Console.WriteLine("What is the width of the rectangle?");
+            Console.WriteLine("\nWhat is the width of the rectangle?");
             string width = Console.ReadLine();
             int intwidth;
             while (!(Int32.TryParse(width, out intwidth)))
             {
-                Console.WriteLine("Incorrect input. What is the width of the rectangle?");
+                Console.WriteLine("\nIncorrect input. What is the width of the rectangle?");
                 width = Console.ReadLine();
             }
 
             string area = (intLength * intwidth).ToString();
-            Console.WriteLine("The area is " + area + ".");
+            Console.WriteLine("\nThe area is " + area + ".");
             Console.ReadLine();
         }
         static void Mpg()
@@ -78,21 +78,21 @@ namespace console_app
             int intMiles;
             while (!(Int32.TryParse(miles, out intMiles)))
             {
-                Console.WriteLine("Incorrect input. How many miles have you driven?");
+                Console.WriteLine("\nIncorrect input. How many miles have you driven?");
                 miles = Console.ReadLine();
             }
 
-            Console.WriteLine("How many gallons of gas have you used?");
+            Console.WriteLine("\nHow many gallons of gas have you used?");
             string gallons = Console.ReadLine();
             int intGallons;
             while (!(Int32.TryParse(gallons, out intGallons)))
             {
-                Console.WriteLine("Incorrect input. How many gallons of gas have you used?");
+                Console.WriteLine("\nIncorrect input. How many gallons of gas have you used?");
                 gallons = Console.ReadLine();
             }
 
             string mpg = (intMiles / intGallons).ToString();
-            Console.WriteLine("Your miles-per-gallon is " + mpg + ".");
+            Console.WriteLine("\nYour miles-per-gallon is " + mpg + ".");
             Console.ReadLine();
         }
         static void StringSearch()
@@ -106,12 +106,14 @@ namespace console_app
 
             if (sentence.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                Console.WriteLine("Term found.");
+                Console.WriteLine("\nTerm found.");
             }
             else
             {
-                Console.WriteLine("Term not found.");
+                Console.WriteLine("\nTerm not found.");
             }
+
+            Console.ReadLine();
         }
     }
 
