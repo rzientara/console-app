@@ -10,6 +10,7 @@ namespace console_app
 
             while (!(option == "q"))
             {
+                Console.Clear();
                 Console.WriteLine("Choose a program.\n[1] name\n[2] area\n[3] mpg\n[4] string search\n[q] quit");
                 option = Console.ReadLine();
                 
@@ -35,6 +36,8 @@ namespace console_app
 
         static void Name()
         {
+            Console.Clear();
+            
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
             Console.WriteLine("Hello, " + name + "!");
@@ -42,6 +45,8 @@ namespace console_app
         }
         static void Area()
         {
+            Console.Clear();
+
             Console.WriteLine("What is the length of the rectangle?");
             string length = Console.ReadLine();
             int intLength;
@@ -66,6 +71,8 @@ namespace console_app
         }
         static void Mpg()
         {
+            Console.Clear();
+
             Console.WriteLine("How many miles have you driven?");
             string miles = Console.ReadLine();
             int intMiles;
@@ -90,6 +97,8 @@ namespace console_app
         }
         static void StringSearch()
         {
+            Console.Clear();
+
             string sentence = "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'";
             
             Console.WriteLine("Enter search terms.");
