@@ -12,6 +12,10 @@ namespace console_app
             {
                 Name();
             }
+            else if (option == "2")
+            {
+                Area();
+            }
         }
 
         static void Name()
@@ -19,6 +23,30 @@ namespace console_app
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
             Console.WriteLine("Hello, " + name + "!");
+            Console.ReadLine();
+        }
+        static void Area()
+        {
+            Console.WriteLine("What is the length of the rectangle?");
+            string length = Console.ReadLine();
+            int intLength;
+            while (!(Int32.TryParse(length, out intLength)))
+            {
+                Console.WriteLine("Incorrect input. What is the length of the rectangle?");
+                length = Console.ReadLine();
+            }
+
+            Console.WriteLine("What is the width of the rectangle?");
+            string width = Console.ReadLine();
+            int intwidth;
+            while (!(Int32.TryParse(width, out intwidth)))
+            {
+                Console.WriteLine("Incorrect input. What is the width of the rectangle?");
+                width = Console.ReadLine();
+            }
+
+            string area = (intLength * intwidth).ToString();
+            Console.WriteLine("The area is " + area + ".");
             Console.ReadLine();
         }
     }
