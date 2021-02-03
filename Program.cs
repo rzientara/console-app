@@ -20,6 +20,10 @@ namespace console_app
             {
                 Mpg();
             }
+            else if (option == "4")
+            {
+                StringSearch();
+            }
         }
 
         static void Name()
@@ -76,6 +80,23 @@ namespace console_app
             string mpg = (intMiles / intGallons).ToString();
             Console.WriteLine("Your miles-per-gallon is " + mpg + ".");
             Console.ReadLine();
+        }
+        static void StringSearch()
+        {
+            string sentence = "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'";
+            
+            Console.WriteLine("Enter search terms.");
+            string term = Console.ReadLine();
+
+            if (sentence.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                Console.WriteLine("Term found.");
+            }
+            else
+            {
+                Console.WriteLine("Term not found.");
+            }
+
         }
     }
 
