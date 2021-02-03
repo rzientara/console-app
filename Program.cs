@@ -16,6 +16,10 @@ namespace console_app
             {
                 Area();
             }
+            else if (option == "3")
+            {
+                Mpg();
+            }
         }
 
         static void Name()
@@ -47,6 +51,30 @@ namespace console_app
 
             string area = (intLength * intwidth).ToString();
             Console.WriteLine("The area is " + area + ".");
+            Console.ReadLine();
+        }
+        static void Mpg()
+        {
+            Console.WriteLine("How many miles have you driven?");
+            string miles = Console.ReadLine();
+            int intMiles;
+            while (!(Int32.TryParse(miles, out intMiles)))
+            {
+                Console.WriteLine("Incorrect input. How many miles have you driven?");
+                miles = Console.ReadLine();
+            }
+
+            Console.WriteLine("How many gallons of gas have you used?");
+            string gallons = Console.ReadLine();
+            int intGallons;
+            while (!(Int32.TryParse(gallons, out intGallons)))
+            {
+                Console.WriteLine("Incorrect input. How many gallons of gas have you used?");
+                gallons = Console.ReadLine();
+            }
+
+            string mpg = (intMiles / intGallons).ToString();
+            Console.WriteLine("Your miles-per-gallon is " + mpg + ".");
             Console.ReadLine();
         }
     }
