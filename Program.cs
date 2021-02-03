@@ -6,24 +6,31 @@ namespace console_app
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose a program.\n[1] name\n[2] area\n[3] mpg\n[4] string search\n[q] quit");
-            string option = Console.ReadLine();
-            if (option == "1")
+            string option = "";
+
+            while (!(option == "q"))
             {
-                Name();
+                Console.WriteLine("Choose a program.\n[1] name\n[2] area\n[3] mpg\n[4] string search\n[q] quit");
+                option = Console.ReadLine();
+                
+                if (option == "1")
+                {
+                    Name();
+                }
+                else if (option == "2")
+                {
+                    Area();
+                }
+                else if (option == "3")
+                {
+                    Mpg();
+                }
+                else if (option == "4")
+                {
+                    StringSearch();
+                }
             }
-            else if (option == "2")
-            {
-                Area();
-            }
-            else if (option == "3")
-            {
-                Mpg();
-            }
-            else if (option == "4")
-            {
-                StringSearch();
-            }
+            
         }
 
         static void Name()
@@ -96,7 +103,6 @@ namespace console_app
             {
                 Console.WriteLine("Term not found.");
             }
-
         }
     }
 
