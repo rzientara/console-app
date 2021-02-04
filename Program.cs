@@ -2,15 +2,24 @@
 
 namespace console_app
 {
-    class Menu
+    class Program
     {
         static void Main(string[] args)
+        {
+            Menu menu = new Menu();
+        }
+    }
+
+    class Menu
+    {
+        static Menu()
         {
             string option = "";
 
             while (!(option == "q"))
             {
                 Console.Clear();
+
                 Console.WriteLine("Choose a program.\n[1] name\n[2] area\n[3] mpg\n[4] string search\n[q] quit");
                 option = Console.ReadLine();
                 
@@ -24,16 +33,14 @@ namespace console_app
                 }
                 else if (option == "3")
                 {
-                    Mpg();
+                    MPG();
                 }
                 else if (option == "4")
                 {
                     StringSearch();
                 }
             }
-            
         }
-
         static void Name()
         {
             Console.Clear();
@@ -41,6 +48,7 @@ namespace console_app
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
             Console.WriteLine("\nHello, " + name + "!");
+            
             Console.ReadLine();
         }
         static void Area()
@@ -49,6 +57,7 @@ namespace console_app
 
             Console.WriteLine("What is the length of the rectangle?");
             string length = Console.ReadLine();
+            
             int intLength;
             while (!(Int32.TryParse(length, out intLength)))
             {
@@ -58,6 +67,7 @@ namespace console_app
 
             Console.WriteLine("\nWhat is the width of the rectangle?");
             string width = Console.ReadLine();
+            
             int intwidth;
             while (!(Int32.TryParse(width, out intwidth)))
             {
@@ -67,14 +77,16 @@ namespace console_app
 
             string area = (intLength * intwidth).ToString();
             Console.WriteLine("\nThe area is " + area + ".");
+            
             Console.ReadLine();
         }
-        static void Mpg()
+        static void MPG()
         {
             Console.Clear();
 
             Console.WriteLine("How many miles have you driven?");
             string miles = Console.ReadLine();
+            
             int intMiles;
             while (!(Int32.TryParse(miles, out intMiles)))
             {
@@ -84,6 +96,7 @@ namespace console_app
 
             Console.WriteLine("\nHow many gallons of gas have you used?");
             string gallons = Console.ReadLine();
+            
             int intGallons;
             while (!(Int32.TryParse(gallons, out intGallons)))
             {
@@ -93,6 +106,7 @@ namespace console_app
 
             string mpg = (intMiles / intGallons).ToString();
             Console.WriteLine("\nYour miles-per-gallon is " + mpg + ".");
+            
             Console.ReadLine();
         }
         static void StringSearch()
@@ -116,5 +130,4 @@ namespace console_app
             Console.ReadLine();
         }
     }
-
 }
